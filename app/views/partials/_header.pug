@@ -29,7 +29,19 @@
                           img.img-fluid.content__img(src=item.img.src, alt=item.img.alt)
                           img.img-fluid.content__img.content__img--active(src=item.img.active, alt=item.img.alt)
                     .content__text!= item.text 
-                    .content__arrow(class={'content__arrow--hidden': i=== 0})  
+                    .content__arrow(class={'content__arrow--hidden': i=== 0})   
+        form.hidden-md-down.contact__form.contactForm(method='post', action='./mail/mail.php')
+          .row
+            .form-group.col-18.offset-3
+              .input__heading!=content.index.modal.heading
+              .input__subheading!=content.index.modal.subheading    
+              input.form-control.form__input.form__phone(aria-invalid='false', placeholder='Ваш телефон', required, name='phone', type='tel')    
+            .col-24    
+              .form__press
+                button.button.form__btn(name='form[контакты]', type='submit', data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Файл отправляется...")
+                  .button__text
+                    i.ic.ic__number
+                    | Заказать звонок                           
       .col-24.col-lg-12
         .result
           .result__item.result__item--1
@@ -43,14 +55,17 @@
             img.result__image.result__image--c.img-fluid(src=content.site.hostname + "img/meat.png", alt="Стейк")    
             img.result__image.result__image--d.img-fluid(src=content.site.hostname + "img/grn.png", alt="Зелень")
             img.result__image.result__image--e.img-fluid(src=content.site.hostname + "img/text.png", alt="Well Done")  
-      .col-12
+      .col-24.hidden-lg-up
         form.contact__form.contactForm(method='post', action='./mail/mail.php')
           .row
-            .form-group.col-xs-12.col-md-6
-              .input__heading ВАШИ ИМЯ И ФАМИЛИЯ
-              input.form-control.form__input.form__name(aria-invalid='false', placeholder='ВАШЕ ИМЯ', required, name='name', type='text')    
-            .col-xs-12    
+            .form-group.col-18.offset-3
+              .input__heading!=content.index.modal.heading
+              .input__subheading!=content.index.modal.subheading    
+              input.form-control.form__input.form__phone(aria-invalid='false', placeholder='Ваш телефон', required, name='phone', type='tel')    
+            .col-24    
               .form__press
                 button.button.form__btn(name='form[контакты]', type='submit', data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Файл отправляется...")
                   .button__text
-                    | Заказать
+                    i.ic.ic__number
+                    | Заказать звонок  
+

@@ -82,7 +82,7 @@
                         </div>
                       </div>
                       <div class="content__text">Неплохая идея</div>
-                      <div class="content__arrow content__arrow--hidden"> </div>
+                      <div class="content__arrow content__arrow--hidden">  </div>
                     </div>
                   </div>
                   <div class="col-8 content__col">
@@ -93,7 +93,7 @@
                         </div>
                       </div>
                       <div class="content__text">Хорошее исполнение</div>
-                      <div class="content__arrow"> </div>
+                      <div class="content__arrow">  </div>
                     </div>
                   </div>
                   <div class="col-8 content__col">
@@ -104,12 +104,28 @@
                         </div>
                       </div>
                       <div class="content__text">Отличный результат</div>
-                      <div class="content__arrow"> </div>
+                      <div class="content__arrow">  </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            <form class="hidden-md-down contact__form contactForm" method="post" action="./mail/mail.php">
+              <div class="row">
+                <div class="form-group col-18 offset-3">
+                  <div class="input__heading">Чтобы заказать сайт, рекламу или автоворонку</div>
+                  <div class="input__subheading">Оставьте ваши контакты</div>
+                  <input class="form-control form__input form__phone" aria-invalid="false" placeholder="Ваш телефон" required name="phone" type="tel">
+                </div>
+                <div class="col-24">   
+                  <div class="form__press">
+                    <button class="button form__btn" name="form[контакты]" type="submit" data-loading-text="&lt;i class='fa fa-circle-o-notch fa-spin'&gt;&lt;/i&gt; Файл отправляется...">
+                      <div class="button__text"><i class="ic ic__number"></i>Заказать звонок                           </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
           <div class="col-24 col-lg-12">
             <div class="result">
@@ -117,17 +133,18 @@
               <div class="result__item result__item--2"> <img class="result__image result__image--a img-fluid" src="img/plate.png" alt="Тарелка"><img class="result__image result__image--b img-fluid" src="img/tomato.png" alt="Помидоры"><img class="result__image result__image--c img-fluid" src="img/meat.png" alt="Стейк"><img class="result__image result__image--d img-fluid" src="img/grn.png" alt="Зелень"><img class="result__image result__image--e img-fluid" src="img/text.png" alt="Well Done"></div>
             </div>
           </div>
-          <div class="col-12">
+          <div class="col-24 hidden-lg-up">
             <form class="contact__form contactForm" method="post" action="./mail/mail.php">
               <div class="row">
-                <div class="form-group col-xs-12 col-md-6">
-                  <div class="input__heading">ВАШИ ИМЯ И ФАМИЛИЯ</div>
-                  <input class="form-control form__input form__name" aria-invalid="false" placeholder="ВАШЕ ИМЯ" required name="name" type="text">
+                <div class="form-group col-18 offset-3">
+                  <div class="input__heading">Чтобы заказать сайт, рекламу или автоворонку</div>
+                  <div class="input__subheading">Оставьте ваши контакты</div>
+                  <input class="form-control form__input form__phone" aria-invalid="false" placeholder="Ваш телефон" required name="phone" type="tel">
                 </div>
-                <div class="col-xs-12">   
+                <div class="col-24">   
                   <div class="form__press">
                     <button class="button form__btn" name="form[контакты]" type="submit" data-loading-text="&lt;i class='fa fa-circle-o-notch fa-spin'&gt;&lt;/i&gt; Файл отправляется...">
-                      <div class="button__text">Заказать</div>
+                      <div class="button__text"><i class="ic ic__number"></i>Заказать звонок  </div>
                     </button>
                   </div>
                 </div>
@@ -140,6 +157,18 @@
     <main class="main">
     </main>
     <div class="footer"></div>
+    <div class="modal modal--success fade" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal__size">
+        <div class="modal-content modal__content">
+          <button class="close modal__close" type="button" data-dismiss="modal" aria-hidden="true">
+            <div class="modal__icon"></div>
+          </button>
+          <div class="modal__heading">Спасибо за заявку!</div>
+          <div class="modal__subheading">Наш менеджер скоро с вами свяжется.</div>
+          <div class="modal__btn" type="button" data-dismiss="modal" aria-hidden="true">Закрыть</div>
+        </div>
+      </div>
+    </div>
     <!-- build:js js/bundle.min.js-->
     <!-- Tether JavaScript-->
     <script src="js/tether.js"></script>
@@ -149,6 +178,9 @@
     <script src="js/bootstrap.js"></script>
     <!-- Old browsers reject JavaScript-->
     <script src="js/jquery.reject.js"></script>
+    <!-- Bootstrap Validation JavaScript-->
+    <script src="js/validator.js"></script>
+    <script src="js/contact_me.js"></script>
     <!-- Custom JavaScript-->
     <script src="js/main.js"></script>
     <!-- endbuild-->

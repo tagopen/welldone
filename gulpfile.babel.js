@@ -68,7 +68,8 @@ gulp.task('scripts', () => {
   return gulp.src([
     'node_modules/tether/dist/js/tether.js',
     'node_modules/bootstrap/dist/js/bootstrap.js',
-    'node_modules/jquery/dist/jquery.js'
+    'node_modules/jquery/dist/jquery.js',
+    'node_modules/bootstrap-validator/dist/validator.js'
   ])
   .pipe($.plumber())
   .pipe(gulp.dest(path.src.js));
