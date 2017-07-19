@@ -129,6 +129,10 @@ a
       display: none
   &__item
     position: relative
+    cursor: pointer
+    transition: all .3s ease-out
+    &--disabled 
+      cursor: default
   &__krug
     background: url(../img/icons/krug.png) no-repeat
     background-size: cover
@@ -145,7 +149,6 @@ a
     height: 4.8em
     border-radius: 1em/ .5em
     background: #fff
-    cursor: pointer
     transform: rotate(90deg)
     z-index: 20
     &:before,

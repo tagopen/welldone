@@ -333,6 +333,13 @@ a:hover, a:focus {
 
 .content__item {
   position: relative;
+  cursor: pointer;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+.content__item--disabled {
+  cursor: default;
 }
 
 .content__krug {
@@ -354,7 +361,6 @@ a:hover, a:focus {
   -webkit-border-radius: 1em/ .5em;
           border-radius: 1em/ .5em;
   background: #fff;
-  cursor: pointer;
   -webkit-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
           transform: rotate(90deg);

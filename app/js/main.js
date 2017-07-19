@@ -21,35 +21,54 @@
     });
   });
 
+  $(function() {
+    var $item = $('.content__item');
+    function step(currentStep) {
+      $('.content__hex--active').removeClass('content__hex--active');
+      $item
+      .removeClass('content__item--active')
+      .addClass('content__item--disabled')
+      .closest('.content__col')
+      .filter(':eq(' + (currentStep) + ')')
+      .find('.content__item')
+      .addClass('content__item--active')
+      .removeClass('content__item--disabled')
+      .find('.content__hex').addClass('content__hex--active');
+    };
 
-
-$(function() {
-  $('.content__krug').on('click', function() { 
-    $('.content__item').removeClass('content__item--active');
-    $(this).parent().addClass('content__item--active');
-    $('.content__hex--active').removeClass('content__hex--active');
-    $(this).find('.content__hex').addClass('content__hex--active');
+    $item.on('click', function() {
+      if ($(this).is('.content__item--active') )
+      {
+        var currentPosition = $(this).closest('.content__col').index() + 1;
+        step(currentPosition);
+      }
+    });
+    step(0);
   });
-});
 
 $(function() {
   $('.content__krug--1').on('click', function() {
-    $('.content__down').addClass('content__down--center');
-    $('.result__image--2').addClass('result__image--2-active');
+    if ($(this).closest('.content__item').is('.content__item--active') ){
+      $('.content__down').addClass('content__down--center');
+      $('.result__image--2').addClass('result__image--2-active');
+    }
   });
 });
 
 $(function() {
   $('.content__krug--2').on('click', function() {
+    if ($(this).closest('.content__item').is('.content__item--active') ){
     $('.content__down').addClass('content__down--right');
     $('.result__image--2').removeClass('result__image--2-active');
     $('.result__image--3').addClass('result__image--3-active');
     $('.smoke').addClass('smoke--active');
+  }
   });
 });
 
 $(function() {
   $('.content__krug--3').on('click', function() {
+    if ($(this).closest('.content__item').is('.content__item--active') ){
     $('.result__item--1').animate({
       left: -1000,
       opacity: 0
@@ -87,6 +106,7 @@ $(function() {
     
     $('.content__down').addClass('content__down--hidden');
     $('.result__item--1').addClass('result__item--hidden');
+  }
   });
 });
 

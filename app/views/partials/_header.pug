@@ -33,7 +33,7 @@
             .content__down
             .row
               each item, i in content.index.steps.info.content
-                .col-8
+                .col-8.content__col
                   .content__item
                     .content__krug(class='content__krug--' + (i + 1)) 
                       .content__hex
@@ -42,4 +42,14 @@
                           img.img-responsive.content__img.content__img--active(src=item.img.active, alt=item.img.alt)
                     .content__text!= item.text 
                     .content__arrow(class={'content__arrow--hidden': i=== 0})  
-  
+      .col-12
+        form.contact__form.contactForm(method='post', action='./mail/mail.php')
+          .row
+            .form-group.col-xs-12.col-md-6
+              .input__heading ВАШИ ИМЯ И ФАМИЛИЯ
+              input.form-control.form__input.form__name(aria-invalid='false', placeholder='ВАШЕ ИМЯ', required, name='name', type='text')    
+            .col-xs-12    
+              .form__press
+                button.button.form__btn(name='form[контакты]', type='submit', data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Файл отправляется...")
+                  .button__text
+                    | Заказать

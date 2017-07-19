@@ -80,7 +80,7 @@
               <div class="content__box">
                 <div class="content__down"></div>
                 <div class="row">
-                  <div class="col-8">
+                  <div class="col-8 content__col">
                     <div class="content__item">
                       <div class="content__krug content__krug--1"> 
                         <div class="content__hex">
@@ -91,7 +91,7 @@
                       <div class="content__arrow content__arrow--hidden"> </div>
                     </div>
                   </div>
-                  <div class="col-8">
+                  <div class="col-8 content__col">
                     <div class="content__item">
                       <div class="content__krug content__krug--2"> 
                         <div class="content__hex">
@@ -102,7 +102,7 @@
                       <div class="content__arrow"> </div>
                     </div>
                   </div>
-                  <div class="col-8">
+                  <div class="col-8 content__col">
                     <div class="content__item">
                       <div class="content__krug content__krug--3"> 
                         <div class="content__hex">
@@ -116,6 +116,23 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="col-12">
+            <form class="contact__form contactForm" method="post" action="./mail/mail.php">
+              <div class="row">
+                <div class="form-group col-xs-12 col-md-6">
+                  <div class="input__heading">ВАШИ ИМЯ И ФАМИЛИЯ</div>
+                  <input class="form-control form__input form__name" aria-invalid="false" placeholder="ВАШЕ ИМЯ" required name="name" type="text">
+                </div>
+                <div class="col-xs-12">   
+                  <div class="form__press">
+                    <button class="button form__btn" name="form[контакты]" type="submit" data-loading-text="&lt;i class='fa fa-circle-o-notch fa-spin'&gt;&lt;/i&gt; Файл отправляется...">
+                      <div class="button__text">Заказать</div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
