@@ -1,19 +1,36 @@
 .header
   .container
     .row
-      .col-8
+      .col-24.col-sm-15.col-lg-9
         .logo
           a.logo__link(href=content.index.header.logo.href) 
             img.logo__img.img-fluid(src=content.site.hostname + "img/logo/logo.png", alt=content.index.header.logo.alt)
           .logo__text!=content.index.header.logo.text
-      .col-4
+      .col-24.col-sm-9.col-lg-4
         a.call(href=content.index.header.call.href) 
           .call__number!=content.index.header.call.number  
-      .col-12
+            i.ic.ic__number
+      .col-24.col-lg-11
         .heading!=content.index.header.heading 
   .container    
-    .row
-      .col-12
+    .row.flex-row-reverse
+      .col-24.col-lg-12
+        .content
+          .content__heading!=content.index.content.heading    
+          .content__box
+            .content__down
+            .row
+              each item, i in content.index.steps.info.content
+                .col-8.content__col
+                  .content__item
+                    .content__krug(class='content__krug--' + (i + 1)) 
+                      .content__hex
+                        .content__icon
+                          img.img-fluid.content__img(src=item.img.src, alt=item.img.alt)
+                          img.img-fluid.content__img.content__img--active(src=item.img.active, alt=item.img.alt)
+                    .content__text!= item.text 
+                    .content__arrow(class={'content__arrow--hidden': i=== 0})  
+      .col-24.col-lg-12
         .result
           .result__item.result__item--1
             img.result__image.result__image--1.img-fluid(src=content.site.hostname + "img/result1.png", alt="Сковорода")
@@ -26,22 +43,6 @@
             img.result__image.result__image--c.img-fluid(src=content.site.hostname + "img/meat.png", alt="Стейк")    
             img.result__image.result__image--d.img-fluid(src=content.site.hostname + "img/grn.png", alt="Зелень")
             img.result__image.result__image--e.img-fluid(src=content.site.hostname + "img/text.png", alt="Well Done")  
-      .col-12
-        .content
-          .content__heading!=content.index.content.heading    
-          .content__box
-            .content__down
-            .row
-              each item, i in content.index.steps.info.content
-                .col-8.content__col
-                  .content__item
-                    .content__krug(class='content__krug--' + (i + 1)) 
-                      .content__hex
-                        .content__icon
-                          img.img-responsive.content__img(src=item.img.src, alt=item.img.alt)
-                          img.img-responsive.content__img.content__img--active(src=item.img.active, alt=item.img.alt)
-                    .content__text!= item.text 
-                    .content__arrow(class={'content__arrow--hidden': i=== 0})  
       .col-12
         form.contact__form.contactForm(method='post', action='./mail/mail.php')
           .row

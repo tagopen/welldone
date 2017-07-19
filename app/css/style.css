@@ -207,15 +207,18 @@ a:hover, a:focus {
   font: 500 14px/26px "FuturaPT", sans-serif;
   vertical-align: middle;
   text-transform: uppercase;
-  padding-left: 15px;
+  padding-left: 5px;
 }
 
 .call {
-  padding-top: 55px;
+  padding-top: 25px;
   display: block;
+  text-align: center;
 }
 
 .call__number {
+  position: relative;
+  display: inline-block;
   color: #646464;
   font: 500 14px/24px "FuturaPT", sans-serif;
   text-transform: uppercase;
@@ -225,15 +228,46 @@ a:hover, a:focus {
   color: #fed608;
 }
 
+.ic__number {
+  display: inline-block;
+  background: url(../img/icons/call.png) no-repeat;
+  width: 18px;
+  height: 16px;
+  position: absolute;
+  left: -25px;
+  top: 4px;
+}
+
 .heading {
-  padding-top: 45px;
-  font: 700 42px/58px "FuturaPT", sans-serif;
+  padding-top: 25px;
+  font: 700 32px/44px "FuturaPT", sans-serif;
   color: #3a3939;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .heading--span {
   color: #fed608;
+}
+
+@media only screen and (min-width: 760px) {
+  .logo__text {
+    padding-left: 15px;
+  }
+  .call {
+    padding-top: 55px;
+    position: relative;
+  }
+  .heading {
+    padding-top: 45px;
+    font: 700 42px/58px "FuturaPT", sans-serif;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .heading {
+    margin-bottom: 0;
+  }
 }
 
 /* ---------------------------------------- */
@@ -308,7 +342,7 @@ a:hover, a:focus {
   width: 100%;
   height: 100%;
   text-align: center;
-  line-height: 70px;
+  line-height: 45px;
   display: block;
   -webkit-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);
@@ -319,7 +353,7 @@ a:hover, a:focus {
 .content__arrow {
   position: absolute;
   left: -18px;
-  top: 60px;
+  top: 37px;
   display: inline-block;
   background: url(../img/icons/right.png) no-repeat;
   background-size: cover;
@@ -345,19 +379,19 @@ a:hover, a:focus {
 .content__krug {
   background: url(../img/icons/krug.png) no-repeat;
   background-size: cover;
-  height: 125px;
-  width: 125px;
+  height: 80px;
+  width: 80px;
   margin: 0 auto;
   position: relative;
-  padding: 24px 16px 16px;
+  padding: 16px;
   margin-bottom: 15px;
 }
 
 .content__hex, .content__hex--active {
   position: relative;
   margin: 0 auto;
-  width: 3.2em;
-  height: 4.8em;
+  width: 2.2em;
+  height: 3.1em;
   -webkit-border-radius: 1em/ .5em;
           border-radius: 1em/ .5em;
   background: #fff;
@@ -435,6 +469,28 @@ a:hover, a:focus {
   }
 }
 
+@media only screen and (min-width: 576px) {
+  .call {
+    padding-top: 60px;
+  }
+  .content__krug {
+    height: 125px;
+    width: 125px;
+    padding: 24px 16px 16px;
+    margin-bottom: 15px;
+  }
+  .content__hex, .content__hex--active {
+    width: 3.2em;
+    height: 4.8em;
+  }
+  .content__icon {
+    line-height: 70px;
+  }
+  .content__arrow {
+    top: 60px;
+  }
+}
+
 /* ---------------------------------------- */
 /* R E S U L T    S T Y L E                 */
 /* ---------------------------------------- */
@@ -449,6 +505,7 @@ a:hover, a:focus {
 
 .result__item {
   position: relative;
+  overflow: hidden;
 }
 
 .result__item--2 {
