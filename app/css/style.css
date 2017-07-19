@@ -276,6 +276,18 @@ a:hover, a:focus {
   display: none;
 }
 
+.content__down--center {
+  left: 50%;
+  -webkit-transition: left .7s ease;
+  transition: left .7s ease;
+}
+
+.content__down--right {
+  left: 85%;
+  -webkit-transition: left .7s ease;
+  transition: left .7s ease;
+}
+
 .content__image {
   text-align: center;
 }

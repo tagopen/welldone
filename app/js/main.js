@@ -34,27 +34,17 @@ $(function() {
 
 $(function() {
   $('.content__krug--1').on('click', function() {
-    var boxWidth = $('.content__box').width(),
-        boxWidthPart = (boxWidth/6);
-        $('.content__down').animate({
-          left: boxWidthPart*3
-        }, 700, "linear", function() {
-        });
-        $('.result__image--2').addClass('result__image--2-active');
+    $('.content__down').addClass('content__down--center');
+    $('.result__image--2').addClass('result__image--2-active');
   });
 });
 
 $(function() {
   $('.content__krug--2').on('click', function() {
-    var boxWidth = $('.content__box').width(),
-        boxWidthPart = (boxWidth/6);
-        $('.content__down').animate({
-          left: boxWidthPart*5+10
-        }, 700, "linear", function() {
-        });
-        $('.result__image--2').removeClass('result__image--2-active');
-        $('.result__image--3').addClass('result__image--3-active');
-        $('.smoke').addClass('smoke--active');
+    $('.content__down').addClass('content__down--right');
+    $('.result__image--2').removeClass('result__image--2-active');
+    $('.result__image--3').addClass('result__image--3-active');
+    $('.smoke').addClass('smoke--active');
   });
 });
 
