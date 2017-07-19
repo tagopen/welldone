@@ -1,5 +1,5 @@
 +comment('general style')
-+ic
++ic  
 +cm('form')
 .text-danger
   color: $text-danger
@@ -24,10 +24,239 @@
   display: flex
   flex-direction: column
   min-height: 100vh
+  background: url(../img/mainbg.jpg) no-repeat
+  background-size: cover
 .main
   flex: 1
+a
+  &:hover,
+  &:focus
+    text-decoration: none  
 +comment("home page style")
-.header
-  font-size: 14px
-.text
-  font: 700 20px/30px $font-futura  
+.logo  
+  padding-top: 50px
+  &__link
+    display: inline-block
+    vertical-align: top
+  &__text
+    display: inline-block  
+    color: #646464
+    font: 500 14px/26px $font-futura
+    vertical-align: middle
+    text-transform: uppercase
+    padding-left: 15px
+.call
+  padding-top: 55px
+  display: block
+  &__number
+    color: #646464
+    font: 500 14px/24px $font-futura
+    text-transform: uppercase
+    &:hover,
+    &:focus
+      color: #fed608
+.heading
+  padding-top: 45px
+  font: 700 42px/58px $font-futura
+  color: #3a3939      
+  text-align: center
+  &--span
+    color: #fed608
++comment("content style")    
+.content
+  &__heading
+    text-align: center
+    color: #3a3939
+    font: 300 18px/19px $font-futura
+    text-transform: uppercase    
+    margin-bottom: 50px
+  &__box
+    position: relative  
+  &__text
+    color: #3a3939
+    font: 700 14px/19px $font-futura
+    text-transform: uppercase
+    text-align: center 
+  &__down
+    position: absolute
+    top: -50px
+    left: 15%
+    margin-left: -9px
+    display: inline-block
+    background: url(../img/icons/down.png) no-repeat
+    background-size: cover
+    height: 18px
+    width: 15px
+    -webkit-animation: arrow-down 1s linear infinite
+    -moz-animation: arrow-down 1s linear infinite
+    animation: arrow-down 1s linear infinite
+    &--hidden
+      display: none
+  &__image
+    text-align: center
+  &__img
+    display: inline-block
+    &--active
+      opacity: 0
+      visibility: hidden
+  &__icon
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    text-align: center
+    line-height: 70px
+    display: block
+    transform: rotate(-90deg)
+    z-index: 25
+  &__arrow
+    position: absolute
+    left: -18px
+    top: 60px
+    display: inline-block
+    background: url(../img/icons/right.png) no-repeat
+    background-size: cover
+    height: 9px
+    width: 5px  
+    &--hidden
+      display: none
+  &__item
+    position: relative
+  &__krug
+    background: url(../img/icons/krug.png) no-repeat
+    background-size: cover
+    height: 125px
+    width: 125px
+    margin: 0 auto
+    position: relative
+    padding: 24px 16px 16px
+    margin-bottom: 15px
+  &__hex
+    position: relative
+    margin: 0 auto
+    width: 3.2em
+    height: 4.8em
+    border-radius: 1em/ .5em
+    background: #fff
+    cursor: pointer
+    transform: rotate(90deg)
+    z-index: 20
+    &:before,
+    &:after
+      position: absolute
+      width: inherit
+      height: inherit
+      border-radius: inherit
+      background: inherit
+      content: ''
+      z-index: 20
+    &:before
+      transform: rotate(60deg)
+    &:after  
+      transform: rotate(-60deg)
+    &--active
+      @extend .content__hex
+      background: #fed608
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.19)
+      transition: all .3s ease
+      .content
+        &__img
+          display: none
+          &--active
+            display: inline-block
+            opacity: 1
+            visibility: visible
+@-ms-keyframes arrow-down 
+  0  
+    -ms-transform: translateY(0)
+  50% 
+    -ms-transform: translateY(20px)   
+  100% 
+    -ms-transform: translateY(0)     
+@-moz-keyframes arrow-down   
+  0  
+    -moz-transform: translateY(0)
+  50% 
+    -moz-transform: translateY(20px)   
+  100% 
+    -moz-transform: translateY(0)    
+@-webkit-keyframes arrow-down  
+  0  
+    -webkit-transform: translateY(0)
+  50% 
+    -webkit-transform: translateY(20px)   
+  100% 
+    -webkit-transform: translateY(0)     
+@keyframes arrow-down   
+  0  
+    transform: translateY(0)
+  50% 
+    transform: translateY(20px)   
+  100% 
+    transform: translateY(0)  
++comment("result style")  
+.container
+  &--relative
+    position: relative    
+.result
+  position: relative
+  top: -70px
+  &__item
+    position: relative
+    &--2  
+      position: absolute
+      top: 0
+      left: -1000px
+      opacity: 0
+      overflow-y: hidden
+      transition: all 0s ease 0s
+  &__image
+    &--2,
+    &--3
+      position: absolute
+      left: 80px
+      top: 80px
+      transform: scale(0.8)
+      display: inline-block
+      opacity: 0
+      transition: opacity .8s ease
+      &-active
+        opacity: 1
+    &--3
+      top: 100px   
+      transition: opacity 1.5s ease
+    &--a
+      max-width: 570px  
+    &--b
+      position: absolute
+      top: 210px
+      left: -25px 
+      opacity: 0
+    &--c
+      position: absolute
+      top: 70px
+      left: 90px   
+      transform: scale(0.8)
+      opacity: 0
+    &--d
+      position: absolute
+      right: 50px
+      top: 250px
+      opacity: 0
+    &--e
+      position: absolute
+      top: 12px
+      left: 130px    
+      transform: scale(0.8)
+      opacity: 0
+.smoke
+  position: absolute
+  top: -25px
+  left: 0     
+  opacity: 0
+  visibility: hidden
+  transition: opacity 1.3s ease
+  &--active
+    opacity: 1
+    visibility: visible
