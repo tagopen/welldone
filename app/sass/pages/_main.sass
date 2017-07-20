@@ -39,7 +39,7 @@ a
     outline: none
 +comment("home page style")
 .logo  
-  padding-top: 50px
+  padding-top: 25px
   &__link
     display: inline-block
     vertical-align: top
@@ -87,14 +87,16 @@ a
     padding-top: 55px    
     position: relative
   .heading
-    padding-top: 45px  
-    font: 700 42px/58px $font-futura
+    padding-top: 20px  
 +r(992)   
   .heading 
     margin-bottom: 0
++r(1200)    
+  .heading
+    font: 700 38px/56px $font-futura
 +comment("content style")    
 .content
-  margin-bottom: 50px
+  margin-bottom: 60px
   &__heading
     text-align: center
     color: #3a3939
@@ -237,7 +239,7 @@ a
     transform: translateY(0) 
 +r(576)    
   .call
-    padding-top: 60px
+    padding-top: 25px
   .content
     &__krug
       height: 125px
@@ -373,7 +375,7 @@ a
         transform: scale(1)
 +r(992)
   .result
-    top: -60px    
+    top: -25px    
     &__image
       &--2,
       &--3
@@ -402,7 +404,7 @@ a
         transform: scale(0.7)      
 +r(1200)
   .result
-    top: -60px    
+    top: -25px    
     &__image
       &--2,
       &--3
@@ -445,17 +447,13 @@ a
     padding-top: 20px
     text-align: center      
     border: 1px solid #3a3939 
-    border-radius: 5px
+    border-radius: 5px 5px 0 0
     border-bottom: 0
 .input
   &__heading
     color: #3a3939
     font: 800 22px/26px $font-futura
-    margin-bottom: 15px
-  &__subheading
-    color: #3a3939 
-    font: 400 18px/20px $font-futura 
-    margin-bottom: 20px
+    margin-bottom: 30px
 .form
   &__input
     text-align: center

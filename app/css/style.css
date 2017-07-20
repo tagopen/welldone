@@ -202,7 +202,7 @@ a:hover, a:focus {
 /* H O M E    P A G E    S T Y L E          */
 /* ---------------------------------------- */
 .logo {
-  padding-top: 50px;
+  padding-top: 25px;
 }
 
 .logo__link {
@@ -268,8 +268,7 @@ a:hover, a:focus {
     position: relative;
   }
   .heading {
-    padding-top: 45px;
-    font: 700 42px/58px "FuturaPT", sans-serif;
+    padding-top: 20px;
   }
 }
 
@@ -279,11 +278,17 @@ a:hover, a:focus {
   }
 }
 
+@media only screen and (min-width: 1200px) {
+  .heading {
+    font: 700 38px/56px "FuturaPT", sans-serif;
+  }
+}
+
 /* ---------------------------------------- */
 /* C O N T E N T    S T Y L E               */
 /* ---------------------------------------- */
 .content {
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 .content__heading {
@@ -484,7 +489,7 @@ a:hover, a:focus {
 
 @media only screen and (min-width: 576px) {
   .call {
-    padding-top: 60px;
+    padding-top: 25px;
   }
   .content__krug {
     height: 125px;
@@ -686,7 +691,7 @@ a:hover, a:focus {
 
 @media only screen and (min-width: 992px) {
   .result {
-    top: -60px;
+    top: -25px;
   }
   .result__image--2, .result__image--3 {
     left: 25px;
@@ -733,7 +738,7 @@ a:hover, a:focus {
 
 @media only screen and (min-width: 1200px) {
   .result {
-    top: -60px;
+    top: -25px;
   }
   .result__image--2, .result__image--3 {
     left: 80px;
@@ -800,21 +805,15 @@ a:hover, a:focus {
   padding-top: 20px;
   text-align: center;
   border: 1px solid #3a3939;
-  -webkit-border-radius: 5px;
-          border-radius: 5px;
+  -webkit-border-radius: 5px 5px 0 0;
+          border-radius: 5px 5px 0 0;
   border-bottom: 0;
 }
 
 .input__heading {
   color: #3a3939;
   font: 800 22px/26px "FuturaPT", sans-serif;
-  margin-bottom: 15px;
-}
-
-.input__subheading {
-  color: #3a3939;
-  font: 400 18px/20px "FuturaPT", sans-serif;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .form__input {

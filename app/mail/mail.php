@@ -52,8 +52,8 @@
   $mail->CharSet = 'UTF-8';
   $mail->IsSendmail();
 
-  $from = 'no-repeat@tagopen.com';
-  $to   = "marchik88@rambler.ru";
+  $from = 'no-repeat@well-done.com.ua';
+  $to   = "website4you.dp@gmail.com";
 
   $mail->SetFrom($from, HOST_NAME);
   $mail->AddAddress($to);

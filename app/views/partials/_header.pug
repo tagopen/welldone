@@ -7,9 +7,13 @@
             img.logo__img.img-fluid(src=content.site.hostname + "img/logo/logo.png", alt=content.index.header.logo.alt)
           .logo__text!=content.index.header.logo.text
       .col-24.col-sm-9.col-lg-4
-        a.call(href=content.index.header.call.href) 
-          .call__number!=content.index.header.call.number  
-            i.ic.ic__number
+        .call
+          a.call__link(href=content.index.header.call.href) 
+            .call__number!=content.index.header.call.number  
+              i.ic.ic__number
+          a.call__link(href=content.index.header.call.href2) 
+            .call__number!=content.index.header.call.number2  
+              i.ic.ic__number      
       .col-24.col-lg-11
         .heading!=content.index.header.heading 
   .container    
@@ -30,15 +34,14 @@
                           img.img-fluid.content__img.content__img--active(src=item.img.active, alt=item.img.alt)
                     .content__text!= item.text 
                     .content__arrow(class={'content__arrow--hidden': i=== 0})   
-        form.hidden-md-down.contact__form.contactForm(method='post', action='./mail/mail.php')
+        form.hidden-md-down.contact__form.contactForm(method='post', action='./mail/mail.php' onsubmit="yaCounter37253420.reachGoal ('application'); ga('send', 'event', 'form', 'submit');")
           .row
             .form-group.col-18.offset-3
-              .input__heading!=content.index.modal.heading
-              .input__subheading!=content.index.modal.subheading    
+              .input__heading!=content.index.modal.heading    
               input.form-control.form__input.form__phone(aria-invalid='false', placeholder='Ваш телефон', required, name='phone', type='tel')    
             .col-24    
               .form__press
-                button.button.form__btn(name='form[контакты]', type='submit', data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Файл отправляется...")
+                button.button.form__btn(name='форма', type='submit', data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Файл отправляется...")
                   .button__text
                     i.ic.ic__number
                     | Заказать звонок                           
