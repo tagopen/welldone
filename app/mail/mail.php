@@ -5,6 +5,11 @@
   if (is_file('lib/class.smtp.php')) {
     require_once("lib/class.smtp.php");
   }
+
+  if (is_file('lib/template.php')) {
+    require_once("lib/template.php");
+  }
+
   $http_host = $_SERVER['HTTP_HOST'];
   $body = '';
   if ( substr($http_host, 0, 4)=='www.') {
@@ -48,12 +53,39 @@
   }
   $body .= chr(10) . chr(13) . "С уважением," . chr(10) . chr(13) . "разработчики сайта " . $post['host_referer'];
 
+
+  // Array to gennerate html
+  $post_data = array(
+      'form'          => (isset($post["user_form"])) ? $post["user_form"] : '' ,
+      'name'          => (isset($post['user_name'])) ? $post['user_name'] : '' ,
+      'phone'         => (isset($post['user_phone'])) ? $post['user_phone'] : '' ,
+      'email'         => (isset($post['user_email'])) ? $post['user_email'] : '' ,
+      'message'       => (isset($post['user_message'])) ? $post['user_message'] : '' ,
+      'copyright'     => (isset($post['host_referer'])) ? $post['host_referer'] : '' 
+  );
+
+  // Customer
+  $mailCopy = new PHPMailer();
+  $mailCopy->CharSet = 'UTF-8';
+
+  $from = 'no-repeat@tagopen.com';
+
+  $mailCopy->SetFrom($from, HOST_NAME);
+  $mailCopy->AddAddress("Artem2431@gmail.com");
+  $mailCopy->AddAddress("marchik88@rambler.ru");
+  $mailCopy->isHTML(true);
+  $mailCopy->Subject = HOST_NAME;
+  $NewsLetterClass = new NewsLetterClass();
+  $mailCopy->Body    = $NewsLetterClass->generateHTMLLetter($post_data);
+
+  $mailCopy->send();
+
   $mail = new PHPMailer();
   $mail->CharSet = 'UTF-8';
   $mail->IsSendmail();
 
-  $from = 'no-repeat@tagopen.com';
-  $to   = "marchik88@rambler.ru";
+  $from = 'no-repeat@well-done.com.ua';
+  $to   = "website4you.dp@gmail.com";
 
   $mail->SetFrom($from, HOST_NAME);
   $mail->AddAddress($to);
@@ -67,4 +99,5 @@
   } else {
     return true;
   }
+
 ?>
